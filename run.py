@@ -9,6 +9,7 @@ init_app(app)
 CORS(app, resources={r"/*": {"origins": "*"}}) 
 
 app.route("/gestion/", methods=["GET"])(get_all_products)
+app.route("/tienda/", methods=["GET"])(get_all_products)
 app.route("/gestion/<int:product_id>", methods=["GET"])(get_product)
 app.route("/gestion/", methods=["POST"])(create_product)
 app.route("/gestion/<int:product_id>", methods=["PUT"])(update_product)
